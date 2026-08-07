@@ -1,0 +1,65 @@
+<app-navbar></app-navbar>
+<div class="body">
+  <div class="location-booking-container">
+    <h2>Book Your Location</h2>
+    <form [formGroup]="interestForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" formControlName="name" placeholder="Enter your name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Enter Your Email:</label>
+        <input type="email" id="email" formControlName="email" placeholder="Enter your Email" required />
+      </div>
+      <div class="form-group">
+        <label for="location">Select Location:</label>
+        <select id="location" formControlName="location" required>
+          <option value="">-- Select --</option>
+          <option>Hyderabad</option>
+          <option>Ladakh</option>
+          <option>Bangalore</option>
+          <option>Pune</option>
+          <option>Mumbai</option>
+          <option>Chennai</option>
+          <option>Kolkata</option>
+          <option>Delhi</option>
+          <option>Ahmedabad</option>
+          <option>Jaipur</option>
+          <option>Lucknow</option>
+          <option>Chandigarh</option>
+          <option>Goa</option>
+          <option>Amritsar</option>
+          <option>Shimla</option>
+          <option>Manali</option>
+          <option>Udaipur</option>
+          <option>Varanasi</option>
+          <option>Surat</option>
+          <option>Bhopal</option>
+          <option>Patna</option>
+          <option>Guwahati</option>
+          <option>Indore</option>
+          <option>Agra</option>
+          <option>Coimbatore</option>
+          <option>Vijayawada</option>
+          <option>Visakhapatnam</option>
+          <option>Rajkot</option>
+          <option>Nagpur</option>
+          <option>Thiruvananthapuram</option>
+          <option>Trichy</option>
+          <option>Madurai</option>
+          <option>Kanpur</option>
+          <option>Jodhpur</option>      
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="date">Date:</label>
+        <input type="date" id="date" formControlName="date" required>
+      </div>
+      <div class="form-group">
+        <label for="time">Select Time:</label>
+        <input type="time" id="time" formControlName="time" required/>
+      </div>
+      <button type="submit" class="btn btn-primary">Book Now</button>
+    </form>
+  </div>
+</div>

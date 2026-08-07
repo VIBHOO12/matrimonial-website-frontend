@@ -1,0 +1,27 @@
+<app-starting></app-starting>
+<div class="register">
+  <div class="container">
+    <form class="form" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <div class="form_inner">
+        <h1>Login</h1>
+        <input type="text" formControlName="userName" placeholder="Enter your Username">
+        <input type="password" formControlName="password" placeholder="Password" required>
+        
+        <button type="submit" class="btn">Login</button>
+        
+        <div class="clas"> Don't have an account? <br> <a routerLink="/register">Signup here</a></div>
+        <div class="google-signin">
+          <a style="text-decoration: none; cursor: pointer;">
+            <div class="card shadow text-center">
+              <div class="card-body">
+                <img src="/assets/icons8-google-48.png" alt="" height="24px" width="24px"> Sign In with Google
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <a routerLink="/forgotpassword">Forgot password?</a>  
+      </div>  
+    </form>
+  </div> 
+</div>

@@ -1,0 +1,27 @@
+<div class="container">
+  <table width="100%">
+    <thead class="thead">
+      <tr>
+        <th><span class="las la-sort"></span> Name</th>
+        <th><span class="las la-sort"></span> E-Mail</th>
+        <th><span class="las la-sort"></span> Country</th>
+        <th><span class="las la-sort"></span> Message</th>
+        <th><span class="las la-sort"></span> Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of contacts">
+        <td>{{ contact.name }}</td>
+        <td>{{ contact.email }}</td>
+        <td>{{ contact.country }}</td>
+        <td>{{ contact.message }}</td>
+        <td>
+          <div class="actions">
+            <button class="reply"  (click)="handleAction(contact)">Reply</button>
+            <button class="delete" (click)="deleteContact(contact.contactId)">Delete</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

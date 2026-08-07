@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <main class="table" id="customers_table">
+        <section class="table__header">
+            <h1>Chats</h1>
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <th> User <span class="icon-arrow"></span></th>
+                        <th> Time <span class="icon-arrow"></span></th>
+                        <th> Message <span class="icon-arrow"></span></th>
+                        <th> Action <span class="icon-arrow"></span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let message of filteredMessages">
+                        <td>{{ message.fromUsername }}</td>
+                        <td>{{ message.sentTime | date: 'dd MMM, yyyy' }}</td>
+                        <td>{{ message.message }}</td>
+                        <td>
+                            <button class="status delivered reply-button" [disabled]="isDisabled" (click)="onClick()">{{ buttonText }}</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</div>

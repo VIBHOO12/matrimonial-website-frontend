@@ -1,0 +1,68 @@
+.body{
+    background-image: url('/assets/location.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 88vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+.location-booking-container {
+     width: 600px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    padding: 20px;
+    height: auto;
+    margin: 30px auto; /* Center horizontally */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: translate(-50%, -50%); /* Center vertically */
+  }
+  
+  .location-booking-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #04AA6D;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .btn:hover {
+    background-color: #48a784;
+  }
+  

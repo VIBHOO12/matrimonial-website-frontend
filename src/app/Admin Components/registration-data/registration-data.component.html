@@ -1,0 +1,19 @@
+<div class="container">
+  <table width="100%">
+    <thead class="thead">
+      <tr>
+        <th><span class="las la-sort"></span> Registration Id</th>
+        <th><span class="las la-sort"></span> User Name</th>
+        <th><span class="las la-sort"></span> E-Mail</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let registration of registrations">
+        <td>{{ registration.rid }}</td>
+        <td>{{ registration.userName }}</td>
+        <td>{{ registration.email }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

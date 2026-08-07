@@ -1,0 +1,70 @@
+<app-navbar></app-navbar>
+<div class="container profile-container">
+  <div class="row justify-content-center">
+    <div class="col-md-8 profile-card">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="profile-picture">
+            <img
+              [src]="'data:image/jpeg;base64,' + user?.personalInfo?.photograph"
+              alt="Profile Picture"
+              class="img-fluid rounded-circle"
+            />
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="profile-details">
+            <h3 class="mt-2 mb-3">{{ user.firstName }} {{ user.lastName }}</h3>
+            <ul class="text list-unstyled">
+              <li><strong>First Name:</strong> <strong>{{ user.firstName }}</strong></li>
+              <li>
+                <strong>Age:</strong>
+                <strong>{{ user.age }} yrs</strong>
+              </li>
+              <li>
+                <strong>Date-Of-Birth:</strong>
+                <strong>{{ user.dateOfBirth }}</strong>
+              </li>
+              <li><strong>Gender:</strong> <strong>{{ user.gender }}</strong></li>
+              <li>
+                <strong>Educational Career:</strong>
+                <strong>{{ user.educationCareer.educationLevel }}</strong>
+              </li>
+              <li>
+                <strong>Educational Field:</strong>
+                <strong>{{ user.educationCareer.educationFiled }}</strong>
+              </li>
+              <li>
+                <strong>Family Status:</strong> <strong>{{ user.familyInfo.familyStatus }}</strong>
+              </li>
+              <li>
+                <strong>Family Type:</strong> <strong>{{ user.familyInfo.familyType }}</strong>
+              </li>
+              <li>
+                <strong>Father Name:</strong> <strong>{{ user.familyInfo.fatherName }}</strong>
+              </li>
+              <li>
+                <strong>Blood Group:</strong> <strong>{{ user.personalInfo.bloodGroup }}</strong>
+              </li>
+            </ul>
+            
+            <form id="interestForm" style="display:none;">
+              <input type="text" name="loggedInUser" [value]="loggedInUser" />
+              <input type="text" name="firstName" [value]="user?.firstName" />
+              <input type="text" name="lastName" [value]="user?.lastName" />
+              <input type="text" name="email" [value]="user?.email" />
+            </form>
+    
+            <div class="buttons-container mt-3">
+              <button class="btn btn-primary mr-2" (click) = "OnChatClick()">Chat</button>
+              <button type="button" class="btn btn-secondary" [disabled]="interestBtnDisabled" (click)="onClick($event)">
+                {{intrestButton}} <i class="fa fa-check"></i>
+              </button>
+              <button class="btn btn-primary mr-2" (click) = "OnLocationClick()">Location Booking</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

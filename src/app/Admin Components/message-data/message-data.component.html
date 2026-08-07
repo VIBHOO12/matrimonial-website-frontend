@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+<div class="container">
+<table width="100%">
+  <thead class="thead">
+    <tr>
+      <th><span class="las la-sort"></span> FromUserNmae</th>
+      <th><span class="las la-sort"></span> ToUserName</th>
+      <th><span class="las la-sort"></span> Message</th>
+      <th><span class="las la-sort"></span> ACTIONS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let message of messages">
+      <td>{{ message.fromUsername }}</td>
+      <td>{{ message.toUsername}}</td>
+      <td>{{ message.message }}</td>
+      <td>
+        <div class="actions">
+          <!-- <button class="update" (click)="updateUser(message)">Update</button> -->
+          <button class="delete" (click)="deleteMessage(message.msgId)">Delete</button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>

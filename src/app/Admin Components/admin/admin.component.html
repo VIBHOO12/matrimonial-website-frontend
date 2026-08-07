@@ -1,0 +1,109 @@
+<body>
+  <input type="checkbox" id="menu-toggle">
+  <div class="sidebar">
+      <div class="side-content">
+          <div class="profile">
+              <div class="profile-img bg-img" style="background-image: url(/assets/images/bride.jpg)"></div>
+              <h4>David Green</h4>
+              <small>Admin</small>
+          </div>
+
+          <div class="side-menu">
+            <ul>
+              <li><a class="active"><span class="las la-home"></span><small>Dashboard</small></a></li>
+              <li><a routerLink="/home" routerLinkActive="active"><span class="las la-user-alt"></span><small>Home</small></a></li>
+              <li><a routerLink="/about" routerLinkActive="active"><span class="las la-envelope"></span><small>About</small></a></li>
+              <li><a routerLink="/page" routerLinkActive="active"><span class="las la-clipboard-list"></span><small>Service</small></a></li>
+              <li><a routerLink="/contact" routerLinkActive="active"><span class="las la-shopping-cart"></span><small>Contact</small></a></li>
+              <li><a routerLink="/location-booking" routerLinkActive="active"><span class="las la-tasks"></span><small>Location Booking</small></a></li>
+              <li><button class="logout-button" (click)="logout()">Logout</button></li>
+          </ul>
+          </div>      
+      </div>
+  </div>
+  
+  <div class="main-content">
+    
+      
+      <main>
+          <div class="page-header">
+              <h1>Admin Panel</h1>
+              <!-- <small>Home / Dashboard</small> -->
+          </div>
+          
+          <div class="page-content">
+              <div class="analytics">
+                <a [routerLink]="['/admin/registrationinfo']" class="card-link">
+                  <div class="card">
+                    <div class="card-head"><h2>{{ totalRegistrations }}</h2><span class="las la-user-friends"></span></div>
+                    <div class="card-progress"><small>Total Registrations</small><div class="card-indicator"><div class="indicator one" style="width: 100%"></div></div></div>
+                  </div>
+                </a>
+                  <div class="card">
+                    <div class="card-head"><h2>{{ totalGrooms }}</h2><span class="las la-male"></span></div>
+                    <div class="card-progress"><small>Total Grooms</small><div class="card-indicator"><div class="indicator two" style="width: 100%"></div></div></div>
+                  </div>
+                  <div class="card">
+                    <div class="card-head"><h2>{{ totalBrides }}</h2><span class="las la-female"></span></div>
+                    <div class="card-progress"><small>Total Brides</small><div class="card-indicator"><div class="indicator three" style="width: 100%"></div></div></div>
+                  </div>
+                  <a [routerLink]="['/message']" class="card-link">
+                  <div class="card">
+                    <div class="card-head"><h2>{{ totalMessages }}</h2><span class="las la-envelope"></span></div>
+                    <div class="card-progress"><small>New messages received</small><div class="card-indicator"><div class="indicator four" style="width: 90%"></div></div></div>
+                  </div>
+                </a>
+                <a [routerLink]="['/admin/contactinfo']" class="card-link">
+                <div class="card">
+                  <div class="card-head"><h2>{{ totalQueries }}</h2><span class="las la-envelope"></span></div>
+                  <div class="card-progress"><small>New Queries received</small><div class="card-indicator"><div class="indicator four" style="width: 90%"></div></div></div>
+                </div>
+              </a>
+              <a [routerLink]="['/admin/contactinfo']" class="card-link">
+                <div class="card">
+                  <div class="card-head"><h2>{{ totalLocations }}</h2><span class="las la-envelope"></span></div>
+                  <div class="card-progress"><small>New Queries received</small><div class="card-indicator"><div class="indicator four" style="width: 90%"></div></div></div>
+                </div>
+              </a>
+              </div>
+              
+
+              <div class="records table-responsive">
+                  <div class="record-header">
+                      <div class="add"><button>Add Record</button></div>
+                      <div class="browse"><input type="search" placeholder="Search" class="record-search"></div>
+                  </div>
+
+                  <div>
+                      <table width="100%">
+                        <thead>
+                          <tr>
+                            <th><span class="las la-sort"></span> NAME</th>
+                            <!-- <th><span class="las la-sort"></span> GENDER</th> -->
+                            <th><span class="las la-sort"></span> AGE</th>
+                            <th><span class="las la-sort"></span> Date Of Birth</th>
+                            <!-- <th><span class="las la-sort"></span> LOCATION</th> -->
+                            <th><span class="las la-sort"></span> ACTIONS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let user of users">
+                            <td>{{ user?.firstName }} {{ user?.lastName }}</td>
+                            <td>{{ user?.age }}</td>
+                            <td>{{ user?.dateOfBirth }}</td>
+                            <td>
+                              <div class="actions">
+                                <button class="delete" (click)="deleteUser($event, user.registration.rid)">Delete</button>
+                                <button class="info" (click)="viewDetails(user)">More Info</button>
+                              </div>
+                            </td>
+                            
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+              </div>
+          </div>
+      </main>
+  </div>
+</body>

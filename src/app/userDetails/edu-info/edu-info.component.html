@@ -1,0 +1,15 @@
+<app-starting></app-starting>
+
+<div class="register">
+    <div class="container">
+      <form [formGroup]="eduForm" (ngSubmit)="onSubmit()" class="form">
+        <div class="form_inner">
+          <h1>Please Provide Your Educational Information</h1>
+          <input formControlName="educationLevel" type="text" name="educationLevel" placeholder="Education Level" required minlength="3"><br>
+          <input formControlName="educationFiled" type="text" name="educationFiled" placeholder="Education Field" required minlength="2"><br>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

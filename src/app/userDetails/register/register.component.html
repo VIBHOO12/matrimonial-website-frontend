@@ -1,0 +1,59 @@
+<app-starting></app-starting>
+<div class="register">
+  <div class="container">
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit($event)" class="form">
+      <div class="form_inner">
+        <h1>SignUp</h1>
+        <input type="text" formControlName="userName" name="userName" placeholder="User Name" required minlength="3"><br>
+        <div *ngIf="registrationForm.controls['userName'].touched && registrationForm.controls['userName'].errors?.['minlength']" class="error">
+          User Name should be at least 3 characters long.
+        </div>
+        
+        <input type="email" formControlName="email" name="email" placeholder="Email" required><br>
+        <div *ngIf="registrationForm.controls['email'].touched && registrationForm.controls['email'].errors?.['email']" class="error">
+          Invalid email format.
+        </div>
+        
+        <input type="password" formControlName="password" placeholder="Password" required pattern="(?=.*\d)(?=.*[!@#$%^&])(?=.*[a-z])(?=.*[A-Z]).{8,}"><br>
+        <div *ngIf="registrationForm.controls['password'].touched && registrationForm.controls['password'].errors?.['pattern']" class="error">
+          Password must contain at least one digit, one special character, one lowercase letter, one uppercase letter, and be at least 8 characters long.
+        </div>
+        
+        <input type="password" formControlName="confirmPassword" placeholder="Confirm Password" required><br>
+        <div *ngIf="registrationForm.controls['confirmPassword'].touched && registrationForm.errors?.['passwordsNotMatch']" class="error">
+          Passwords do not match.
+        </div>
+        
+        <button type="submit">Next</button>
+        <div  class="login-link"> Already have an account ? <br> <a class="a" [routerLink]="['/login']">Login here</a> </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<!--  <div class="register">
+    <div class="container">
+      <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="form">
+        <div class="form_inner">
+          <h1>SignUp</h1>
+          <input type="text" formControlName="userName" name="userName" placeholder="User Name" required minlength="3"><br>
+          <div *ngIf="registrationForm.controls['userName'].errors?.['minlength']" class="error">User Name should be at least 3 characters long.</div>
+          <input type="email" formControlName="email" name="email" placeholder="Email" required><br>
+          <div *ngIf="registrationForm.controls['email'].errors?.['email']" class="error">Invalid email format.</div>
+          <input type="password" formControlName="password" placeholder="Password" required pattern="(?=.*\d)(?=.*[!@#$%^&])(?=.*[a-z])(?=.*[A-Z]).{8,}"><br>
+          <div *ngIf="registrationForm.controls['password'].errors?.['pattern']" class="error">Password must contain at least one digit, one special character, one lowercase letter, one uppercase letter, and be at least 8 characters long.</div>
+          <input type="password" formControlName="confirmPassword" placeholder="Confirm Password" required><br>
+          <div *ngIf="registrationForm.hasError('passwordsNotMatch')" class="error">Passwords do not match.</div>
+          <button type="submit">Save</button>
+          <a class="btn">Next<i class="bi bi-arrow-right"></i></a>
+          <div> Already have an account ? <a class="a" href="/login">Login here</a> </div>
+        </div>
+      </form>
+    </div>
+  </div>-->
+    
+  
+  
+
+  

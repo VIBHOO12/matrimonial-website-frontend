@@ -1,0 +1,50 @@
+<div class="background-container">
+  <div class="navbar">
+    <div class="nav-title">
+      <h1>Vivah</h1>
+    </div>
+    <div class="nav-logo">
+      <img src="/assets/marriage.jpg" alt="">
+    </div>
+    <div class="nav-items">
+      <ul>
+        <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+        <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+        <li><a routerLink="/service" routerLinkActive="active">Services</a></li>
+        <li><a routerLink="/contact" routerLinkActive="active">Contacts</a></li>
+        <li><a routerLink="/bookings" routerLinkActive="active">Manage Appointments</a></li>
+        <li><a routerLink="/chatdata" routerLinkActive="active">Chats</a></li>
+      </ul>
+    </div>
+    <img [src]="'data:image/jpeg;base64,' + userInfo?.personalInfo?.photograph" class="user-pic" (click)="toggleMenu()">
+    <div class="sub-menu-wrap" [ngClass]="{ 'open-menu': isSubMenuOpen }">
+      <div class="sub-menu">
+        <div class="user-info">
+          <img [src]="'data:image/jpeg;base64,' + userInfo?.personalInfo?.photograph" alt="">
+          <h4>{{ userInfo?.firstName }} {{ userInfo?.lastName }}</h4>
+        </div>
+        <hr>
+        <a routerLink="/profile" routerLinkActive="active" class="sub-menu-link">
+          <img src="/assets/images/profile.png">
+          <p>Edit Profile</p>
+          <span>></span>
+        </a>
+        <a routerLink="/settings" routerLinkActive="active" class="sub-menu-link">
+          <img src="/assets/images/setting.png">
+          <p>Setting & Privacy</p>
+          <span>></span>
+        </a>
+        <a href="help" class="sub-menu-link">
+          <img src="/assets/images/help.png">
+          <p>Help & Support</p>
+          <span>></span>
+        </a>
+        <a href="#" class="sub-menu-link" (click)="logout()">
+          <img src="/assets/images/logout.png">
+          <p>Logout</p>
+          <span>></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

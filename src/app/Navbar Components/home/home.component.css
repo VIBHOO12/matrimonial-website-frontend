@@ -1,0 +1,90 @@
+.banner
+{
+    background-image: url("/assets/backimg.jpg");
+    height: 100vh;
+    background-position: center top;
+    background-size: cover;
+}
+.content
+{
+    top: 30%;
+    left: 20%;
+    position: absolute;
+}
+.content h1 
+{
+    color: #fff;
+    font-size: 60px;
+    font-weight: bold;
+    /* align-items: center; */
+
+}
+.content h2 
+{
+    color: #fff;
+    font-size: 40px;
+    font-weight: Medium;
+
+}
+.content a 
+{
+    text-decoration: none;
+    background-color: #fff;
+    background: transparent;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 5px;
+}
+
+.content a:hover 
+{
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.highlight
+{
+    color: #814343;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
+    
+}
+
+.container {
+    display: flex; /* Use flexbox */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    justify-content: center; /* Center the cards horizontally */
+    align-items: stretch; /* Stretch cards to match height */
+    text-align: center;
+    margin: 30px;
+    
+  }
+  .card {
+    flex: 1; /* Distribute available space evenly among cards */
+    margin: 0 10px; /* Add some margin between cards */
+  }
+  
+  .card img {
+    height: 400px;
+    width: 400px;
+  }
+  
+  .card-title {
+    font-size: 1.5rem; /* Increase font size for card titles */
+  }
+  
+  .card-text {
+    font-size: 1rem; /* Set font size for card text */
+  }
+  .text-center{
+    margin: 15px;
+  }
+  
+@media screen and (max-width:600px)
+{
+    .banner
+{
+    height: 700px;
+}
+}

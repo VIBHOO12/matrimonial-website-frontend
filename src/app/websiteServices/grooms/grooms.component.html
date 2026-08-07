@@ -1,0 +1,36 @@
+<app-navbar></app-navbar>
+<!--<div *ngFor="let user of users" class="card item-card card-block">
+  <img
+    *ngIf="user.personallnfo && user.personallnfo.photograph"
+    [src]="'data:image/jpeg;base64,' + user.personallnfo.photograph"
+    alt="Unable to load photo"
+  />
+</div>-->
+
+<!--<h1 class="h1">Groom Information</h1>
+
+<div class="container">
+  <div *ngFor="let item of combinedData" class="card">
+     Display personal information 
+    <img [src]="'data:image/jpeg;base64,' + item.personalInfo.photograph" alt="{{ item.personalInfo.photograph }}'s photo" class="card-img">
+    <div class="card-content">
+      <p>Name: {{ item.userInfo.firstName }} {{ item.userInfo.lastName }}</p>
+      <p>Age: {{ item.userInfo.age }}</p>
+      <p>Date of Birth: {{ item.userInfo.dateOfBirth }}</p>
+      <p>Gender: {{ item.userInfo.gender }}</p>
+      <p>Blood Group: {{ item.personalInfo.bloodGroup }}</p>
+      <button>More Information</button>
+    </div>
+  </div>
+</div>-->
+
+<h1 class="h1">Groom Information</h1>
+<div class="container">
+  <div *ngFor="let user of users" class="card">
+    <img [src]="'data:image/jpeg;base64,' + user.personalInfo?.photograph" alt="{{ user.firstName }}'s photo" class="card-img">
+    <div class="card-content">
+      <p>First Name: {{ user.firstName }} <br> Last Name: {{ user.lastName }} <br> Age: {{ user.age }} years old <br> Date Of Birth: {{ user.dateOfBirth }}</p>
+      <button (click)="viewDetails(user)">More Information</button>
+    </div>
+  </div>
+</div>

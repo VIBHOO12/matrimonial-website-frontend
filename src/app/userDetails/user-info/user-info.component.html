@@ -1,0 +1,22 @@
+<app-starting></app-starting>
+<div class="register">
+
+    <div class="container">
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="form">
+            <div class="form_inner">
+                <h1>Please Provide us with your User Info</h1>
+            <input type="text" formControlName="firstName" placeholder="First Name" required minlength="3"><br>
+            <input type="text" formControlName="lastName" placeholder="Last Name" required minlength="3"><br>
+            <input type="number" formControlName="age" placeholder="Age" required min="2"><br>
+            <input type="date" formControlName="dateOfBirth" placeholder="Date of Birth" required><br>
+            <select formControlName="gender" required>
+                <option value="" disabled selected>Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select><br>
+            <button type="submit">Next</button>
+        </div>
+    </form>
+</div>
+</div>
+  

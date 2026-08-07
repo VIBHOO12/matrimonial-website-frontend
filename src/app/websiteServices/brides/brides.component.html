@@ -1,0 +1,11 @@
+<app-navbar></app-navbar>
+<h1 class="h1">Brides Information</h1>
+<div class="container">
+  <div *ngFor="let user of users" class="card">
+    <img [src]="'data:image/jpeg;base64,' + user.personalInfo.photograph" alt="{{ user.firstName }}'s photo" class="card-img">
+    <div class="card-content">
+      <p>First Name: {{ user.firstName }} <br> Last Name: {{ user.lastName }} <br> Age: {{ user.age }} years old <br> Date Of Birth: {{ user.dateOfBirth }}</p>
+      <button (click)="viewDetails(user)">More Information</button>
+    </div>
+  </div>
+</div>

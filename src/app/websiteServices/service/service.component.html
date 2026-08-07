@@ -1,0 +1,133 @@
+<app-navbar></app-navbar>
+<div class="top1">
+  <div class="body">
+    <span class="font_Rubik"><br>Celebration begins</span>
+      <div class="container">
+        <h2 class ="headline">Search Grooms and Brides by City, Profession & Community </h2>
+          <div class="dropdown-container">
+            <div class="dropdown">
+              <label for="lookingFor">I am looking for:</label>
+              <select id="lookingFor" name="lookingFor" [(ngModel)]="lookingFor">
+                  <option value="man">Man</option>
+                  <option value="woman">Woman</option>
+              </select>
+          </div>
+          <div class="dropdown">
+              <label for="ageFrom">Age from:</label>
+              <select id="ageFrom" name="ageFrom">
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+                  <!-- Add more age options as needed -->
+              </select>
+          </div>
+          <div class="dropdown">
+              <label for="ageTo">to</label>
+              <select id="ageTo" name="ageTo">
+                  <option value="27">27</option>
+                  <option value="28">28</option>
+                  <option value="29">29</option>
+                  <!-- Add more age options as needed -->
+              </select>
+          </div>
+          <div class="dropdown">
+              <label for="religion">Of religion:</label>
+              <select id="religion" name="religion">
+                  <option value="christianity">Christianity</option>
+                  <option value="islam">Islam</option>
+                  <option value="hinduism">Hinduism</option>
+                  <option value="buddhism">Buddhism</option>
+                  <option value="judaism">Judaism</option>
+                  <!-- Add more religion options as needed -->
+              </select>
+          </div>
+          <div class="dropdown">
+              <label for="motherTongue">Mother tongue:</label>
+              <select id="motherTongue" name="motherTongue">
+                  <option value="english">English</option>
+                  <option value="spanish">Spanish</option>
+                  <option value="french">French</option>
+                  <option value="mandarin">Mandarin</option>
+                  <option value="hindi">Hindi</option>
+                  <!-- Add more mother tongue options as needed -->
+              </select>
+          </div>
+
+          <li><a class="button" [routerLink]="showProfile()">Let's Begin</a></li>
+
+      </div>
+
+      <div class="services-container">
+          <h2 class="headline">Our Awesome Services</h2>
+          <p>
+            At [company name], we pride ourselves on providing top-notch services that exceed our customers' expectations. Our team of experts is dedicated to delivering high-quality solutions that meet your unique needs.
+          </p>
+          <ul>
+            <li>At [company name], we understand that finding the perfect partner is one of the most important decisions you'll ever make.
+                 That's why we're dedicated to providing a safe, secure, and user-friendly platform that connects like-minded individuals looking for a 
+                 meaningful relationship. Our team of experts is committed to delivering high-quality services that exceed your expectations, from personalized 
+                 matchmaking to relationship coaching. With our extensive database of verified profiles and advanced search filters, you can find your ideal partner 
+                 with ease. Join us today and start your journey towards a happy and fulfilling marriage!</li>
+            <li>At [company name], we understand that finding the perfect partner is one of the most important decisions you'll ever make.
+                    That's why we're dedicated to providing a safe, secure, and user-friendly platform that connects like-minded individuals looking for a 
+                    meaningful relationship. Our team of experts is committed to delivering high-quality services that exceed your expectations, from personalized 
+                    matchmaking to relationship coaching. With our extensive database of verified profiles and advanced search filters, you can find your ideal partner 
+                    with ease. Join us today and start your journey towards a happy and fulfilling marriage!</li> 
+            <li>At [company name], we understand that finding the perfect partner is one of the most important decisions you'll ever make.
+                        That's why we're dedicated to providing a safe, secure, and user-friendly platform that connects like-minded individuals looking for a 
+                        meaningful relationship. Our team of experts is committed to delivering high-quality services that exceed your expectations, from personalized 
+                        matchmaking to relationship coaching. With our extensive database of verified profiles and advanced search filters, you can find your ideal partner 
+                        with ease. Join us today and start your journey towards a happy and fulfilling marriage!</li>  
+             <li>At [company name], we understand that finding the perfect partner is one of the most important decisions you'll ever make.
+                          That's why we're dedicated to providing a safe, secure, and user-friendly platform that connects like-minded individuals looking for a 
+                          meaningful relationship. Our team of experts is committed to delivering high-quality services that exceed your expectations, from personalized 
+                          matchmaking to relationship coaching. With our extensive database of verified profiles and advanced search filters, you can find your ideal partner 
+                          with ease. Join us today and start your journey towards a happy and fulfilling marriage!</li> 
+                                         
+           
+          </ul>
+          <ul *ngIf="showInformation">
+              <li *ngIf="lookingFor === 'man'">Bride's Information</li>
+              <li *ngIf="lookingFor === 'woman'">Groom's Information</li>
+          </ul>
+      </div>
+  </div>
+
+        <footer class="footer">
+          <div class="con">
+            <div class="row">
+              <div class="col-md-4">
+                <h3>Marketing</h3>
+                <ul>
+                  <li><a href="#">SEO Services</a></li>
+                  <li><a href="#">Social Media Marketing</a></li>
+                  <li><a href="#">Email Marketing</a></li>
+                  <li><a href="#">Content Marketing</a></li>
+                  <li><a href="#">PPC Advertising</a></li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <h3>Online Marriage Planner</h3>
+                <ul>
+                  <li><a href="#">Wedding Checklist</a></li>
+                  <li><a href="#">Budget Planner</a></li>
+                  <li><a href="#">Guest List Manager</a></li>
+                  <li><a href="#">Vendor Directory</a></li>
+                  <li><a href="#">Wedding Inspiration</a></li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <h3>Location Wedding</h3>
+                <ul>
+                  <li><a>Destination Weddings</a></li>
+                  <li><a >Beach Weddings</a></li>
+                  <li><a >Mountain Weddings</a></li>
+                  <li><a >City Weddings</a></li>
+                  <li><a >Rustic Weddings</a></li>
+                </ul>
+              </div>
+            </div>
+            
+          </div>
+        </footer>
+      </div>

@@ -1,0 +1,28 @@
+<app-starting></app-starting>
+<div class="register">
+    <div class="container">
+      <form action="" class="form" [formGroup]="familyForm" (ngSubmit)="onSubmit()">
+        <div class="form_inner">
+          <h1>Please Provide Your Family Information</h1>
+          <select name="familyStatus" formControlName="familyStatus" required>
+                    <option value="" disabled selected>Select Family Status</option>
+                    <option value="Middle Class">Middle Class</option>
+                    <option value="Upper Middle Class">Upper Middle Class</option>
+                    <option value="Rich">Rich</option>
+          </select><br>
+
+          <select name="familyType" formControlName="familyType" required>
+            <option value="" disabled selected>Select Family Type</option>
+            <option value="Nuclear">Nuclear</option>
+            <option value="Joint Family">Joint Family</option>
+          </select><br>
+          <input type="text" formControlName="fatherName" placeholder="Father Name" required minlength="2">
+          <button type="submit">Next</button>
+        </div>
+      </form>
+    </div>
+  </div>  
+
+
+
+
